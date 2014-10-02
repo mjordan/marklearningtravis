@@ -1,6 +1,19 @@
 import pytest
 import requests
+import MySQLdb
+import MySQLdb.cursors
 
-def test_foo():
+def test_requests():
     r = requests.get('https://github.com/mjordan')
     assert r.status_code == 200
+
+def test_mysql():
+    try:
+        con = MySQLdb.connect('127.0.0.1', 'root'), '', 'pkppln')
+        cur = con.cursor()
+        cur.execute("SELECT * FROM terms_of_use")
+        result = cur.fetchall()
+    except MySQLdb.Error, e:
+        sys.exit(1)
+
+    assert len(result):
