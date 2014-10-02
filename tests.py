@@ -16,4 +16,4 @@ def test_mysql():
     except MySQLdb.Error, e:
         sys.exit(1)
 
-    assert len(result):
+    assert len(result)
