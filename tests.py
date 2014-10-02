@@ -9,7 +9,7 @@ def test_requests():
 
 def test_mysql():
     try:
-        con = MySQLdb.connect('127.0.0.1', 'root'), '', 'pkppln')
+        con = MySQLdb.connect('127.0.0.1', 'root', '', 'pkppln')
         cur = con.cursor()
         cur.execute("SELECT * FROM terms_of_use")
         result = cur.fetchall()
