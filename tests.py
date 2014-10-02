@@ -1,8 +1,6 @@
 import pytest
+import requests
 
-# some basic testss
-def f():
-    return 3
-
-def test_function():
-    assert 4 == 4
+def test_foo():
+    r = requests.get('https://github.com/mjordan')
+    assert r.status_code == 200
