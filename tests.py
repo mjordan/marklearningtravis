@@ -2,6 +2,7 @@ import pytest
 import requests
 import MySQLdb
 import MySQLdb.cursors
+import sys
 
 def test_requests():
     r = requests.get('https://github.com/mjordan')
