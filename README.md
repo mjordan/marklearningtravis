@@ -9,6 +9,8 @@ Test repo for me to learn how about travis-ci.
 
 tests.py tests whether an HTTP request to https://github.com/mjordan returns successful, and whether there are any rows in the database.
 
+Thanks to @beghelli and @MichaelThessel for tips.
+
 
 
 
