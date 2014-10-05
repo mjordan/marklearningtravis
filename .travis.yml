@@ -9,6 +9,7 @@ before_script:
   - mysql -e 'create database pkppln;'
   - mysql -uroot pkppln < markstestdb.sql
   - eval "echo \"`cat wsgi.conf`\"" > /tmp/wsgi.conf
+  - cat /tmp/wsgi.conf
   - sudo mv /tmp/wsgi.conf /etc/apache2/conf.d/wsgi.conf
   - sudo chmod o+x $TRAVIS_BUILD_DIR
   - sudo service apache2 restart
