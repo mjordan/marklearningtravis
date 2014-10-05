@@ -10,6 +10,6 @@ before_script:
   - mysql -uroot pkppln < markstestdb.sql
   - eval "echo \"`cat wsgi.conf`\"" > /tmp/wsgi.conf
   - sudo mv /tmp/wsgi.conf /etc/apache2/conf.d/wsgi.conf
-  - sudo chmod o+x to $TRAVIS_BUILD_DIR
+  - sudo chmod o+x $TRAVIS_BUILD_DIR
   - sudo service apache2 restart
 script: "py.test tests.py"
