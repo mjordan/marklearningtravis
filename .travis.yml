@@ -9,6 +9,6 @@ before_script:
   - mysql -e 'create database pkppln;'
   - mysql -uroot pkppln < markstestdb.sql
   # - sudo eval "echo \"`cat wsgi.conf`\"" > /etc/apache2/conf.d/wsgi.conf
-  - sudo eval "echo \"`cat wsgi.conf`\"" > /tmp/wsgi.conf
+  - eval "echo \"`cat wsgi.conf`\"" > /tmp/wsgi.conf
   - service apache2 restart
 script: "py.test tests.py"
