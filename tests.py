@@ -5,7 +5,7 @@ import MySQLdb.cursors
 import sys
 
 def test_requests():
-    r = requests.get('https://github.com/mjordan')
+    r = requests.get('http://localhost/hello')
     assert r.status_code == 200
 
 def test_mysql():
