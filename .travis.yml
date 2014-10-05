@@ -13,5 +13,5 @@ before_script:
   - sudo chmod o+x $TRAVIS_BUILD_DIR
   - sudo service apache2 restart
 script: "py.test tests.py"
-# after_failure: "cat /tmp/wsgi.conf"
-after_failure: "cat wsgi.conf"
+after_failure:
+   - cat /tmp/wsgi.conf
