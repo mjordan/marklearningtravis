@@ -3,9 +3,9 @@ python:
   - "2.7"
 before_install:
   - sudo apt-get install apache2 libapache2-mod-wsgi
-  - sudo chmod o+x $TRAVIS_BUILD_DIR
 install:
   - pip install -r requirements.txt
+  - ./install.sh 
 before_script:
   - mysql -e 'create database pkppln;'
   - mysql -uroot pkppln < markstestdb.sql
