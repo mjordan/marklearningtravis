@@ -14,7 +14,7 @@ before_script:
   # - eval "echo \"`cat wsgi.conf`\"" > /tmp/wsgi.conf
   # - sudo cp /tmp/wsgi.conf /etc/apache2/conf.d/wsgi.conf
   #- sudo service apache2 restart
-  - sudo ./bottle_hello.wsgi
+  - sudo python bottle_hello.wsgi
 script: "py.test tests.py"
 # after_failure:
    # - cat /etc/apache2/conf.d/wsgi.conf
