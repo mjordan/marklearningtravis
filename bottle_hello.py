@@ -4,3 +4,4 @@ from bottle import route, template
 def hello():
     return template('Hello')
 
+application = bottle.default_app()
