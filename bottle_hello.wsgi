@@ -1,7 +1,7 @@
 import sys
-from bottle import route, template
-
 sys.path.append("lib")
+
+from bottle import route, template
 
 @route('/hello')
 def hello():
