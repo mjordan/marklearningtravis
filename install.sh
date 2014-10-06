@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo chmod ${TRAVIS_BUILD_DIR}
+sudo chmod o+x ${TRAVIS_BUILD_DIR}
 
