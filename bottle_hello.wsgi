@@ -1,6 +1,3 @@
-import os
-os.chdir(os.path.dirname(__file__))
-
 import bottle
 from bottle import route, template
 
@@ -8,4 +5,5 @@ from bottle import route, template
 def hello():
     return template('Hello')
 
-application = bottle.default_app()
+# application = bottle.default_app()
+run(host='localhost', port=80)

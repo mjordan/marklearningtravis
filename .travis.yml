@@ -2,7 +2,7 @@ language: python
 python:
   - "2.7"
 before_install:
-  - sudo apt-get install apache2 libapache2-mod-wsgi
+  # - sudo apt-get install apache2 libapache2-mod-wsgi
 install:
   - pip install MySQL-python 
   - pip install requests
@@ -11,12 +11,13 @@ install:
 before_script:
   - mysql -e 'create database pkppln;'
   - mysql -uroot pkppln < markstestdb.sql
-  - eval "echo \"`cat wsgi.conf`\"" > /tmp/wsgi.conf
-  - sudo cp /tmp/wsgi.conf /etc/apache2/conf.d/wsgi.conf
-  - sudo service apache2 restart
+  # - eval "echo \"`cat wsgi.conf`\"" > /tmp/wsgi.conf
+  # - sudo cp /tmp/wsgi.conf /etc/apache2/conf.d/wsgi.conf
+  #- sudo service apache2 restart
+  sudo ./bottle_hello.wsgi
 script: "py.test tests.py"
 after_failure:
-   - cat /etc/apache2/conf.d/wsgi.conf
-   - sudo cat /var/log/apache2/error.log
+   # - cat /etc/apache2/conf.d/wsgi.conf
+   # - sudo cat /var/log/apache2/error.log
 notifications:
     email: false
