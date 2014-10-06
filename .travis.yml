@@ -6,8 +6,11 @@ virtualenv:
 before_install:
   - sudo apt-get install apache2 libapache2-mod-wsgi
 install:
+  - pip install MySQL-python -t lib/ --use-mirrors
+  - pip install requests -t lib/ --use-mirrors
+  - pip install bottle==0.12 -t lib/ --use-mirrors
   # - pip install -r requirements.txt
-  - pip install -r requirements.txt -t lib/
+  # - pip install -r requirements.txt -t lib/
   - ./install.sh 
 before_script:
   - mysql -e 'create database pkppln;'
