@@ -6,8 +6,8 @@ virtualenv:
 before_install:
   - sudo apt-get install apache2 libapache2-mod-wsgi
 install:
-  - pip install MySQL-python -t lib/ 
   - pip install requests -t lib/ 
+  - pip install MySQL-python -t lib/ 
   - pip install bottle -t lib/ 
   # - pip install -r requirements.txt
   # - pip install -r requirements.txt -t lib/
