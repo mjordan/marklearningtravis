@@ -15,3 +15,4 @@ before_script:
 script: "py.test tests.py"
 after_failure:
    - cat /etc/apache2/conf.d/wsgi.conf
+   - cat /var/log/apache2/error.log
