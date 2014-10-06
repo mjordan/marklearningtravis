@@ -5,5 +5,4 @@ from bottle import route, template
 def hello():
     return template('Hello')
 
-# application = bottle.default_app()
-run(host='localhost', port=80)
+application = bottle.default_app()
