@@ -6,7 +6,8 @@ virtualenv:
 before_install:
   - sudo apt-get install apache2 libapache2-mod-wsgi
 install:
-  - pip install -r requirements.txt
+  # - pip install -r requirements.txt
+  - pip install -r requirements.txt -t lib/
   - ./install.sh 
 before_script:
   - mysql -e 'create database pkppln;'
