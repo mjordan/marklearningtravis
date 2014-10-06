@@ -1,6 +1,4 @@
-import sys
-sys.path.append("lib")
-
+import bottle
 from bottle import route, template
 
 @route('/hello')
