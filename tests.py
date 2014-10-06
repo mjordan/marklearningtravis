@@ -1,7 +1,7 @@
 import pytest
-import requests
 import MySQLdb
 import MySQLdb.cursors
+import requests
 import sys
 
 def test_requests():
