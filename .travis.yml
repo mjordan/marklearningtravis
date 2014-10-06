@@ -20,3 +20,5 @@ script: "py.test tests.py"
 after_failure:
    - cat /etc/apache2/conf.d/wsgi.conf
    - sudo cat /var/log/apache2/error.log
+notifications:
+    email: false
