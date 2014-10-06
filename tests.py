@@ -1,8 +1,10 @@
+import sys
 import pytest
+sys.path.append("lib")
+
 import MySQLdb
 import MySQLdb.cursors
 import requests
-import sys
 
 def test_requests():
     r = requests.get('http://localhost/hello')
