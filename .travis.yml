@@ -18,6 +18,7 @@ before_script:
   - eval "echo \"`cat wsgi.conf`\"" > /tmp/wsgi.conf
   - sudo cp /tmp/wsgi.conf /etc/apache2/conf.d/wsgi.conf
   - sudo service apache2 restart
+  # Sanity check on wether the bottle library can be found - it is.
   - python test.py
 script: "py.test tests.py"
 after_failure:
