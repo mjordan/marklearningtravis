@@ -25,6 +25,6 @@ after_failure:
    - cat /etc/apache2/conf.d/wsgi.conf
    # Display the contents of this file.
    - sudo cat /var/log/apache2/error.log
-   - sudo cat /etc/apache2/apache2.conf
+   - sudo env ${APACHE_RUN_USER}
 notifications:
     email: false
