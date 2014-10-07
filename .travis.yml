@@ -6,18 +6,24 @@ before_install:
 install:
   - pip install bottle 
   - pip install requests
-  - pip install MySQL-python 
+  - pip install MySQL-python
+  # Display a list of all installed Python modules.
   - pip freeze
   - ./install.sh 
 before_script:
   - mysql -e 'create database pkppln;'
   - mysql -uroot pkppln < markstestdb.sql
+  # Replace the ${TRAVIS_BUILD_DIR} token in wsgi.conf with the
+  # value of that environment variable.
   - eval "echo \"`cat wsgi.conf`\"" > /tmp/wsgi.conf
   - sudo cp /tmp/wsgi.conf /etc/apache2/conf.d/wsgi.conf
   - sudo service apache2 restart
 script: "py.test tests.py"
 after_failure:
+   # Display the contents of wsgi.conf to make sure that the correct
+   # value of the ${TRAVIS_BUILD_DIR} variable was inserted.
    - cat /etc/apache2/conf.d/wsgi.conf
+   # Display the contents of this file.
    - sudo cat /var/log/apache2/error.log
 notifications:
     email: false
